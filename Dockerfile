@@ -24,7 +24,7 @@ RUN apt-get install -y ttf-wqy-microhei && \
 
 RUN apt-get install -y firefox
 RUN apt-get install terminator
-VOLUME ["/tmp/", "/tmp/"]
+VOLUME ["/tmp"]
 
 CMD /usr/bin/vncserver :1 -geometry 1280x800 -depth 24 && tail -f /root/.vnc/*:1.log
 
