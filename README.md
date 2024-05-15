@@ -11,3 +11,11 @@ and then connect to:
 `vnc://<host>:5901` via VNC client.
 
 The VNC password is `password`.
+
+
+docker
+```
+docker build -t vnc-ubuntu .
+
+docker run -d -p 5901:5901 --name vnc-container vnc-ubuntu
+```
