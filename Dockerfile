@@ -1,7 +1,8 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
+
 # 更新源为阿里云源
 RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list && \
     sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list && \
@@ -22,6 +23,7 @@ RUN apt-get install -y ttf-wqy-microhei && \
     apt-get install -y xfonts-wqy
 
 RUN apt-get install -y firefox
+RUN apt-get install terminator
 
 CMD /usr/bin/vncserver :1 -geometry 1280x800 -depth 24 && tail -f /root/.vnc/*:1.log
 
