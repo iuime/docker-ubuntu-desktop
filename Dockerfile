@@ -23,7 +23,7 @@ RUN apt-get install -y ttf-wqy-microhei && \
     apt-get install -y xfonts-wqy
 
 RUN apt-get install -y firefox
-RUN apt-get install terminator
+RUN apt-get install -y terminator
 VOLUME ["/tmp"]
 
 CMD /usr/bin/vncserver :1 -geometry 1280x800 -depth 24 && tail -f /root/.vnc/*:1.log
